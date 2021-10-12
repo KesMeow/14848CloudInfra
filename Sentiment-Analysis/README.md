@@ -1,10 +1,31 @@
-This repository contains the source files needed to follow the series [Kubernetes and everything else](https://rinormaloku.com/series/kubernetes-and-everything-else/) or summarized as an article in [Learn Kubernetes in Under 3 Hours: A Detailed Guide to Orchestrating Containers](https://medium.freecodecamp.org/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882)
+This repository includes everything needed to run a kubernetes based Sentiment-Analyzer.
 
-To learn more about Kubernetes and other related topics check the following examples with the **Sentiment Analysis** application:
+First, we need to create frontend pods using:
 
-* [Kubernetes Volumes in Practice](https://rinormaloku.com/kubernetes-volumes-in-practice/):
-* [Ingress Controller - simplified routing in Kubernetes](https://www.orange-networks.com/blogs/210-ingress-controller-simplified-routing-in-kubernetes)
-* [Docker Compose in Practice](https://github.com/rinormaloku/k8s-mastery/tree/docker-compose)
-* [Istio around everything else series](https://rinormaloku.com/series/istio-around-everything-else/)
-* [Simple CI/CD for Kubernetes with Azure DevOps](https://www.orange-networks.com/blogs/224-azure-devops-ci-cd-pipeline-to-deploy-to-kubernetes)
-* Envoy series - to be added!
+kubectl create -f sa-frontend-deployment.yaml
+
+Then, a service is needed to allow users access those pods via the following command:
+
+kubectl create -f service-sa-frontend-lb.yaml
+You should see:
+service "sa-frontend-lb" created
+
+After the frontend is created, we create the backend logic service and deployment.
+
+Create Logic deployment via:
+
+kubectl apply -f sa-logic-deployment.yaml --record
+
+Then create logic service via:
+
+kubectl apply -f service-sa-logic.yaml
+
+Finally, deploy SA WebApp using:
+kubectl apply -f sa-web-app-deployment.yaml --record
+
+Service the webapp via:
+kubectl apply -f service-sa-web-app-lb.yaml
+
+voila,now you should be able to access the sentiment analyzer via the public IP address.
+
+Use kubectl get services to find the external IP address for sa-frontend and go ahead and check it out! 
