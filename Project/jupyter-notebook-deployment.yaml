@@ -21,7 +21,7 @@ spec:
         app: jupyter-notebook
     spec:
       containers:
-        - image: bitnami/jupyter-base-notebook
+        - image: jupyter/minimal-notebook
           imagePullPolicy: Always
           name: jupyter-notebook
           ports:
