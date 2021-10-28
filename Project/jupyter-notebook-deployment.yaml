@@ -21,7 +21,7 @@ spec:
         app: jupyter-notebook
     spec:
       containers:
-        - image: docker pull bitnami/jupyter-base-notebook
+        - image: bitnami/jupyter-base-notebook
           imagePullPolicy: Always
           name: jupyter-notebook
           ports:
