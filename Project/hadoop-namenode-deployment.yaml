@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hadoop-namenode
+  labels:
+    app: hadoop-namenode
+spec:
+  replicas: 1
+  selector:
+     matchLabels:
+       app: hadoop-namenode
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxUnavailable: 
+      maxSurge: 1 
+  template:
+    metadata:
+      labels:
+        app: hadoop-namenode
+    spec:
+      containers:   
+        - image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+          imagePullPolicy: Always
+          name: hadoop-namenode
+          ports:
+            - containerPort: 5001
+
