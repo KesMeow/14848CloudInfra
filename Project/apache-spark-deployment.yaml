@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apache-spark
+  labels:
+    app: apache-spark
+spec:
+  replicas: 1
+  selector:
+     matchLabels:
+       app: apache-spark
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxUnavailable: 
+      maxSurge: 1 
+  template:
+    metadata:
+      labels:
+        app: apache-spark
+    spec:
+      containers:
+        - image: docker pull adairrr/apache-spark-kubernetes
+          imagePullPolicy: Always
+          name: apache-spark
+          ports:
+            - containerPort: 4000
+

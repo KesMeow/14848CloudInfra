@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jupyter-notebook
+  labels:
+    app: jupyter-notebook
+spec:
+  replicas: 1
+  selector:
+     matchLabels:
+       app: jupyter-notebook
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxUnavailable: 
+      maxSurge: 1 
+  template:
+    metadata:
+      labels:
+        app: jupyter-notebook
+    spec:
+      containers:
+        - image: docker pull bitnami/jupyter-base-notebook
+          imagePullPolicy: Always
+          name: jupyter-notebook
+          ports:
+            - containerPort: 3000
+
