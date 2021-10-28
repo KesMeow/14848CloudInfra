@@ -21,11 +21,15 @@ spec:
         app: jupyter-notebook
     spec:
       containers:
-        - image: bitnami/jupyter-base-notebook
-          imagePullPolicy: Always
-          name: jupyter-notebook
+       image: jupyter/datascience-notebook:latest
+          imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8888
+          - containerPort: 8888
+          command:
+            - /bin/bash
+            - -c
+            - |
+              start.sh jupyter lab --LabApp.token='password' --LabApp.ip='0.0.0.0' --LabApp.allow_root=True
 ---
 apiVersion: v1
 kind: Service
