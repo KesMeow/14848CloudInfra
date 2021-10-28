@@ -21,9 +21,12 @@ spec:
         app: apache-spark
     spec:
       containers:
-        - image: adairrr/apache-spark-kubernetes
+        - image: docker pull bitnami/spark
           imagePullPolicy: Always
           name: apache-spark
+          env:
+          - name: SPARK_MODE
+            value: "master"
           ports:
             - containerPort: 4000
 
