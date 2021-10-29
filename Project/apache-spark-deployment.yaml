@@ -21,7 +21,7 @@ spec:
         app: apache-spark
     spec:
       containers:
-        - image: docker pull bitnami/spark
+        - image: bitnami/spark
           imagePullPolicy: Always
           name: apache-spark
           env:
