@@ -24,6 +24,9 @@ spec:
         - image: bitnami/sonarqube
           imagePullPolicy: Always
           name: sonarqube
+          env:
+          - name: ALLOW_EMPTY_PASSWORD
+            value: "yes"
           ports:
             - containerPort: 6000
 ---
