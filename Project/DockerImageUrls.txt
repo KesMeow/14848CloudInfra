@@ -1,0 +1,19 @@
+Docker Image URLs:
+
+Terminal Url:
+https://hub.docker.com/repository/docker/kesterzhou/project-terminal
+
+Sonarqube Url:
+https://hub.docker.com/r/bitnami/sonarqube
+
+JupyterNotebook Url:
+https://hub.docker.com/r/jupyter/minimal-notebook
+
+Hadoop Namenode Url:
+https://hub.docker.com/r/bde2020/hadoop-namenode
+
+Hadoop Datanode Url:
+https://hub.docker.com/r/bde2020/hadoop-datanode
+
+Apache-Spark Url: 
+https://hub.docker.com/r/bitnami/spark
