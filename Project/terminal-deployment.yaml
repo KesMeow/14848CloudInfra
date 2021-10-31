@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project-terminal
+  labels:
+    app: project-terminal
+spec:
+  replicas: 1
+  selector:
+     matchLabels:
+       app: project-terminal
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxUnavailable: 
+      maxSurge: 1 
+  template:
+    metadata:
+      labels:
+        app: project-terminal
+    spec:
+      containers:
+        - image: kesterzhou/project-terminal
+          imagePullPolicy: Always
+          name: project-terminal
+          ports:
+            - containerPort: 8888
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: project-terminal
+  labels:
+    name: project-terminal
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8888
+      protocol: TCP
+      name: http
+  selector:
+    name: project-terminal
