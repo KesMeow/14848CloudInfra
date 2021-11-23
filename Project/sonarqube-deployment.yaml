@@ -21,7 +21,7 @@ spec:
         app: sonarqube
     spec:
       containers:
-        - image: bitnami/sonarqube
+        - image: sonarqube
           imagePullPolicy: Always
           name: sonarqube
           env:
@@ -39,7 +39,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 60
+    - port: 6000
       targetPort: 6000
       protocol: TCP
       name: http
