@@ -25,7 +25,7 @@ spec:
           imagePullPolicy: Always
           name: jupyter-notebook
           ports:
-            - containerPort: 0.0.0.0:8888
+            - containerPort: 8888
 ---
 apiVersion: v1
 kind: Service
