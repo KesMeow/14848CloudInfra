@@ -8,7 +8,7 @@
     
         kubectl run term --image=kesterzhou/project-terminal -it
 
-3. Finally, interactive with the pod in interactive mode using:
+3. Finally, open another terminal and interactive with the pod in interactive mode using:
 
         kubectl exec term -it python terminal.py
 
@@ -26,14 +26,9 @@
 
 #### To Deploy Apache-Spark on Kubernetes
 
-1. First deploy the apache-spark-deployment via:
+1.  Deploy both the deployment and service via: 
 
         kubectl apply -f apache-spark-deployment.yaml
-
-2. Then create service for corresponding deployment using:
-
-        kubectl apply -f service-apache-spark.yaml
-
 
 #### To Deploy Jupyter Notebook on Kubernetes
 
