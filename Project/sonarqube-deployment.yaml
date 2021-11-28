@@ -33,15 +33,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: sonarqube
+  name: service-sonarqube
   labels:
-    name: sonarqube
+    name: service-sonarqube
 spec:
   type: LoadBalancer
   ports:
     - port: 9001
       targetPort: 9001
       protocol: TCP
-      name: http
   selector:
-    name: sonarqube
+    app: sonarqube
