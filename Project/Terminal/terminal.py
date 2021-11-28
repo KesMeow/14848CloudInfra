@@ -38,16 +38,16 @@ while choice != 'q':
     display_title_bar()
     if choice == '1':
         print("\nGotcha, I will open Apache Hadoop for you.\n")
-        print("Please use: 35.199.187.51:9870 to access the Jupyter Notebook\n")
+        print("Please use: 35.199.187.51:9870 to access the Apacne Hadoop\n")
     elif choice == '2':
         print("\nSure thing, Apache Spark will be ready momentarily.\n")
-        print("Please use: 34.127.15.221:8080 to access the Jupyter Notebook\n")
+        print("Please use: 34.127.15.221:8080 to access the Apache Spark\n")
     elif choice == '3':
         print("\nJupyter Notebook selected. I will get it ready for you.\n")
         print("Please use: 35.199.178.167:8888 to access the Jupyter Notebook\n")
     elif choice == '4':
         print("\nI will spin up Sonarqube for you.\n")
-        print("Please use: 34.105.115.19:9000 to access the Jupyter Notebook\n")
+        print("Please use: 34.105.115.19:9000 to access the SonarQube\n")
     elif choice == 'q':
         print("\nThanks for using this toolbox. Bye.")
     else:
