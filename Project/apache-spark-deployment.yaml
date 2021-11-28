@@ -33,15 +33,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: apache-spark
+  name: service-apache-spark
   labels:
-    name: apache-spark
+    name: service-apache-spark
 spec:
   type: LoadBalancer
   ports:
     - port: 8081
       targetPort: 80
       protocol: TCP
-      name: http
   selector:
-    name: apache-spark
+    app: apache-spark
