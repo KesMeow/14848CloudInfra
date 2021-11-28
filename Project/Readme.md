@@ -1,5 +1,5 @@
 #### Please use the following Google Drive link to access Demo Video
-[https://drive.google.com/drive/folders/19cEPGf_RuDa49U_8mxdpUGUMt33cck_-?usp=sharing][https://drive.google.com/drive/folders/19cEPGf_RuDa49U_8mxdpUGUMt33cck_-?usp=sharing]
+[https://drive.google.com/drive/folders/19cEPGf_RuDa49U_8mxdpUGUMt33cck_-?usp=sharing]
 
 
 
