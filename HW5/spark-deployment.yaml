@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mml-spark
+  labels:
+    app: mml-spark
+spec:
+  replicas: 1
+  selector:
+     matchLabels:
+       app: mml-spark
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxUnavailable: 
+      maxSurge: 1 
+  template:
+    metadata:
+      labels:
+        app: mml-spark
+    spec:
+      containers:
+        - image: mcr.microsoft.com/mmlspark/release
+          imagePullPolicy: Always
+          name: mml-spark
+          ports:
+            - containerPort: 8888
